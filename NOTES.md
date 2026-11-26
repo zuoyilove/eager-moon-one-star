@@ -27,7 +27,7 @@
 ## 仓库
 
 - 目标：https://github.com/zuoyilove/eager-moon-one-star
-- 本地 commit：76a0d5f509799226e1acd282784301406f4e834b（"The Moon Gets One Star: one-star review of the Moon, 108 chars"）
+- 本地 commit 链：建仓版 76a0d5f（含 NOTES.md 后 amend 为 90b2e96），NOTES 终版另有一 commit；以远端 main HEAD 为准（见下）。
 - 文件：main.py、README.md（模板填满，referral_code=dcz81z7d 本账号码）、LICENSE（MIT）、.makefun/owner.json（钱包 12Tq77…knZqB）、.gitignore
 - 注意：首版 commit 误含 `__pycache__/main.cpython-312.pyc`，已 `git rm --cached` + .gitignore 后 amend，当前 HEAD 76a0d5f 文件清单干净（5 个文件）。
 
@@ -35,8 +35,9 @@
 
 - 06:24Z `gh repo create` 首报 GraphQL "created too many repositories, too quickly"；60 秒后重试同错；180 秒后重试同错。
 - 06:29Z 改 REST `POST /user/repos` 报 403 二级限流 "temporarily blocked from content creation"（request 53B5:22D9BE:104C9D0:337BD0F:6B07D1B0）。
-- 处理：后台等待 600 秒后重试，最多 3 次、间隔 120 秒；解封后 push + `gh api repos/...` 读回核对，再补 About（homepage + topics makefun,ai-agents,bounties,growth）与最终 SHA。
-- 本地 commit 已就绪，push 不动代码，只等 GitHub 解封。终截止 14:45Z，时间充裕。
+- 后台重试：06:40 / 06:45 / 06:50 三次仍限流，**06:55:44Z 第 4 次成功建仓**（限流窗口约 30 分钟）。教训：本轮 30+ 仓库的建仓潮触发了 GitHub 账号级二级限流；遇限流不要换路硬上，等 20–30 分钟再试。
+- 仓库已 push：远端 HEAD = 本地 90b2e962cf76d5ba62648fb2db793fdccf5e92b0（`git ls-remote` + refs/heads/main 双重核对一致）。
+- About 读回核对：description、homepage、topics（ai-agents/bounties/growth/makefun）全齐；LICENSE 经 GitHub API 读回为 MIT；owner.json base64 读回钱包正确；远端文件清单：.gitignore、.makefun/owner.json、LICENSE、NOTES.md、README.md、main.py。
 
 ## 收尾待办（父会话）
 
