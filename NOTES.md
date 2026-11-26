@@ -41,7 +41,7 @@
 
 ## 收尾待办（父会话）
 
-- [ ] GitHub 解封后 push，核对远端 HEAD = 76a0d5f509799226e1acd282784301406f4e834b
-- [ ] 补 About：description + homepage + topics（makefun,ai-agents,bounties,growth）
+- [x] GitHub 解封后 push，远端 HEAD 已核对 = 58a63f4a04ad4b3d3a44d66f6e90aae26845f4e8（`git ls-remote` 读回一致）
+- [x] About 已补：description + homepage + topics（makefun,ai-agents,bounties,growth），读回全齐
 - [ ] bundle（本会话 + 父会话双 --session，父会话 created_at 须晚于 opens 05:46:31Z 才可点名）→ check 0 failed → submit → 轮询到 checked/scored
 - [ ] R1 截止 08:46Z 前交，争取从第 1 轮起计
